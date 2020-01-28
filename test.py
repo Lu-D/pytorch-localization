@@ -1,12 +1,16 @@
+# Author: Daiwei (David) Lu
+# Make predictions on test images
+
 import torch
 from skimage import io, transform
 from torch.utils.data import Dataset
 from torchvision import transforms
-import torch.nn as nn
-from torchvision import models
+from model import Net
 from utils import TestFile, Rescale, ToTensor, show_dot
 import argparse
+
 MODEL_PATH = './model.pth'
+
 
 def test_model(path, viz=False):
     image = io.imread(path)
@@ -14,31 +18,28 @@ def test_model(path, viz=False):
 
     device = torch.device("cuda")
 
-    model = models.vgg11(pretrained=True)
-    model.classifier = nn.Sequential(*[model.classifier[i] for i in range(3)])
-    model.classifier = nn.Sequential(nn.Linear(25088, 128),
-                                     nn.Dropout(0.5),
-                                     nn.Linear(128, 2), )
+    model = Net()
     model = model.to(device)
 
     model.load_state_dict(torch.load(MODEL_PATH))
     model.eval()
 
     with torch.no_grad():
-            set = TestFile(path,
-                           transform=transforms.Compose([
-                               Rescale(256),
-                               ToTensor()
-                           ])
-                           )
-            loader = torch.utils.data.DataLoader(set)
-            for i, input in enumerate(loader):
-                input = input.float().cuda().to(device)
-                coordinates = model(input).data
-                coordinates=coordinates.cpu().numpy()
-                print('{:.4f} {:.4f}'.format(coordinates[0][0], coordinates[0][1]))
-                if viz:
-                    show_dot(image, coordinates)
+        set = TestFile(path,
+                       transform=transforms.Compose([
+                           Rescale(256),
+                           ToTensor()
+                       ])
+                       )
+        loader = torch.utils.data.DataLoader(set)
+        for i, input in enumerate(loader):
+            image = input['image'].float().cuda().to(device)
+            coordinates = model(image).data
+            coordinates = coordinates.cpu().numpy()
+            print('{:.4f} {:.4f}'.format(coordinates[0][0], coordinates[0][1]))
+            if viz:
+                show_dot(input['original'], coordinates)
+
 
 def main():
     # Training settings

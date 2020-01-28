@@ -2,136 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="782001e6-9f11-4028-9784-6aac0c100be4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model.pth" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/labels/labels.txt" beforeDir="false" afterPath="$PROJECT_DIR$/labels/labels.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/labels/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/labels/test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/labels/train.txt" beforeDir="false" afterPath="$PROJECT_DIR$/labels/train.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/labels/val.txt" beforeDir="false" afterPath="$PROJECT_DIR$/labels/val.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/test/120.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/test/120.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/test/121.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/test/121.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/test/122.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/test/122.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/test/123.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/test/123.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/test/124.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/test/124.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/test/126.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/test/126.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/10.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/100.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/100.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/101.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/101.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/102.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/102.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/103.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/103.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/104.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/104.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/105.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/105.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/106.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/106.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/107.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/107.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/108.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/108.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/109.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/109.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/11.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/110.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/110.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/12.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/13.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/14.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/15.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/16.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/17.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/18.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/20.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/20.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/22.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/22.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/23.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/23.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/24.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/24.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/25.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/25.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/26.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/26.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/27.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/27.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/29.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/29.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/30.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/30.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/31.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/31.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/32.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/33.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/33.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/34.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/34.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/35.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/35.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/36.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/36.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/37.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/37.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/38.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/38.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/39.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/39.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/40.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/40.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/41.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/41.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/42.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/42.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/43.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/43.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/44.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/44.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/45.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/45.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/46.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/46.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/47.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/47.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/48.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/49.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/49.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/50.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/50.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/51.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/51.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/52.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/52.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/53.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/53.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/54.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/54.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/55.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/55.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/57.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/57.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/58.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/58.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/59.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/59.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/60.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/60.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/61.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/61.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/62.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/62.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/63.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/63.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/64.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/64.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/66.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/66.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/67.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/67.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/68.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/68.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/69.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/69.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/70.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/70.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/71.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/71.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/72.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/72.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/73.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/73.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/74.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/74.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/75.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/75.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/76.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/76.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/77.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/77.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/78.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/78.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/79.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/79.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/8.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/80.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/80.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/81.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/81.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/82.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/82.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/83.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/83.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/84.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/84.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/85.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/85.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/86.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/86.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/87.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/87.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/88.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/88.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/89.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/89.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/9.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/90.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/90.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/91.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/91.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/92.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/92.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/93.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/93.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/94.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/94.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/95.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/95.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/96.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/96.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/97.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/97.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/98.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/98.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/train/99.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/train/99.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/validation/111.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/validation/111.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/validation/112.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/validation/112.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/validation/113.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/validation/113.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/validation/114.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/validation/114.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/validation/115.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/validation/115.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/validation/116.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/validation/116.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/validation/117.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/validation/117.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/validation/118.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/validation/118.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/validation/119.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/validation/119.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/validation/125.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/validation/125.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/best.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/labels/test.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/load.py" beforeDir="false" afterPath="$PROJECT_DIR$/load.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model.pth" beforeDir="false" afterPath="$PROJECT_DIR$/model.pth" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
@@ -152,7 +27,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1WxW9t5TiNOEuuExb9as0dvfZQf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -164,6 +41,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/test.py" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.train">
@@ -259,7 +137,7 @@
       <option name="presentableId" value="Default" />
       <updated>1580091577908</updated>
       <workItem from="1580091586439" duration="5746000" />
-      <workItem from="1580097563484" duration="13744000" />
+      <workItem from="1580097563484" duration="18208000" />
     </task>
     <servers />
   </component>
@@ -271,6 +149,10 @@
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state x="625" y="206" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1714.1103@0.0.1714.1103" timestamp="1580191048632" />
+    <state x="605" y="407" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1580208668125">
+      <screen x="0" y="0" width="1714" height="1103" />
+    </state>
+    <state x="605" y="407" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1714.1103@0.0.1714.1103" timestamp="1580208668125" />
     <state x="638" y="293" key="FileChooserDialogImpl" timestamp="1580186311893">
       <screen x="0" y="0" width="1714" height="1103" />
     </state>

@@ -1,24 +1,31 @@
+# Author: Daiwei (David) Lu
+# Train custom model
+
 from torch.utils.data import Dataset
 import torch.nn as nn
 import torch.optim as optim
 from torch.optim import lr_scheduler
-from torchvision import models
 import time
 import copy
 from load import *
-
+from model import Net
+from utils import visualize_model
 
 import warnings
+
 warnings.filterwarnings("ignore")
 plt.ion()
 
+
 def train_model(model, criterion, optimizer, scheduler, dataloaders, device, num_epochs=25):
+    dataset_sizes = {x: len(image_datasets[x]) for x in ['train', 'val']}
+    class_names = ['x', 'y']
     since = time.time()
     best_model_wts = copy.deepcopy(model.state_dict())
     best_loss = 9001.
     best_acc = 1.
-    dataset_sizes = {x: len(image_datasets[x]) for x in ['train', 'val']}
-    class_names = ['x', 'y']
+    train_loss = []
+    val_loss = []
     for epoch in range(num_epochs):
         print('Epoch {}/{}'.format(epoch, num_epochs - 1))
         print('-' * 10)
@@ -27,9 +34,9 @@ def train_model(model, criterion, optimizer, scheduler, dataloaders, device, num
             if phase == 'train':
                 model.train()  # Set model to training mode
             else:
-                model.eval()   # Set model to evaluate mode
+                model.eval()  # Set model to evaluate mode
             running_loss = 0.0
-            running_corrects = 0.
+            running_corrects = 0.0
             # Iterate over data.
             for loader in dataloaders[phase]:
                 inputs, labels = loader['image'], loader['coordinates']
@@ -38,15 +45,14 @@ def train_model(model, criterion, optimizer, scheduler, dataloaders, device, num
                 # zero the parameter gradients
                 optimizer.zero_grad()
                 # forward
-                # track history if only in train
-                with torch.set_grad_enabled(phase == 'train'):
-                    outputs = model(inputs)
-                    loss = criterion(outputs, labels)
+                outputs = model(inputs)
+                loss = criterion(outputs, labels)
 
-                    # backward + optimize only if in training phase
-                    if phase == 'train':
-                        loss.backward()
-                        optimizer.step()
+                # backward + optimize only if in training phase
+                if phase == 'train':
+                    loss.backward()
+                    optimizer.step()
+
                 running_loss += loss.item() * inputs.size(0)
                 running_corrects += calc_acc(labels, outputs)
             if phase == 'train':
@@ -60,6 +66,10 @@ def train_model(model, criterion, optimizer, scheduler, dataloaders, device, num
             print('{} Acc: {:.6f}'.format(
                 phase, epoch_acc
             ))
+            if phase == 'train':
+                train_loss.append(epoch_loss)
+            else:
+                val_loss.append(epoch_loss)
 
             # deep copy the model
             if phase == 'val' and epoch_acc < best_acc:
@@ -77,78 +87,70 @@ def train_model(model, criterion, optimizer, scheduler, dataloaders, device, num
 
     # load best model weights
     model.load_state_dict(best_model_wts)
-    return model
+    return model, train_loss, val_loss
 
-def visualize_model(model, dataloaders, device):
-    was_training = model.training
-    model.eval()
-    fig = plt.figure()
-
-    with torch.no_grad():
-        for i, batch in enumerate(dataloaders['val']):
-            inputs, labels = batch['image'], batch['coordinates']
-            inputs = inputs.float().cuda().to(device)
-            print('Label:', batch['coordinates'].data)
-            batch['coordinates'].data = model(inputs).data
-            plt.figure()
-            batch_show(batch)
-            plt.axis('off')
-            plt.ioff()
-            plt.show()
-
-        model.train(mode=was_training)
 
 image_datasets = {'train': PhoneDataset('labels/train.txt',
-                       '',
-                       mode='train',
-                       transform=transforms.Compose([
-                           Rescale(256),
-                           RandomVerticalFlip(0.5),
-                           RandomHorizontalFlip(0.5),
-                           RandomColorJitter(0.9),
-                           ToTensor()
-                       ])),
-                'val': PhoneDataset('labels/val.txt',
-                       '',
-                       mode='validation',
-                       transform=transforms.Compose([
-                           Rescale(256),
-                           RandomVerticalFlip(0.1),
-                           RandomHorizontalFlip(0.1),
-                           RandomColorJitter(0.1),
-                           ToTensor()
-                       ]))}
+                                        '',
+                                        mode='train',
+                                        transform=transforms.Compose([
+                                            Rescale(256),
+                                            RandomVerticalFlip(0.5),
+                                            RandomHorizontalFlip(0.5),
+                                            RandomColorJitter(0.9),
+                                            ToTensor(),
+                                            Normalize()
+                                        ])),
+                  'val': PhoneDataset('labels/val.txt',
+                                      '',
+                                      mode='validation',
+                                      transform=transforms.Compose([
+                                          Rescale(256),
+                                          # RandomVerticalFlip(0.1),
+                                          # RandomHorizontalFlip(0.1),
+                                          # RandomColorJitter(0.1),
+                                          ToTensor(),
+                                          Normalize()
+                                      ]))}
+
 
 def main():
-        dataloaders = {'train': torch.utils.data.DataLoader(image_datasets['train'], batch_size=32,
-                                             shuffle=True),
-                       'val': torch.utils.data.DataLoader(image_datasets['val'], batch_size=4,
-                                             shuffle=True)}
+    dataloaders = {'train': torch.utils.data.DataLoader(image_datasets['train'], batch_size=16,
+                                                        shuffle=True),
+                   'val': torch.utils.data.DataLoader(image_datasets['val'], batch_size=4,
+                                                      shuffle=True)}
 
-        device = torch.device("cuda")
+    device = torch.device("cuda")
 
-        model = models.vgg11(pretrained=True)
-        model.classifier = nn.Sequential(*[model.classifier[i] for i in range(3)])
-        model.classifier = nn.Sequential(nn.Linear(25088, 64),
-                                         nn.Dropout(0.5),
-                                         nn.Linear(64, 2),)
-        model = model.to(device)
+    model = Net()
+    model = model.to(device)
 
-        criterion = nn.MSELoss()
+    criterion = nn.MSELoss()
 
+    optimizer_conv = optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
 
-        optimizer_conv = optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
+    # Decay LR by a factor of 0.5 every 20 epochs
+    exp_lr_scheduler = lr_scheduler.StepLR(optimizer_conv, step_size=20, gamma=0.5)
 
-        # Decay LR by a factor of 0.5 every 20 epochs
-        exp_lr_scheduler = lr_scheduler.StepLR(optimizer_conv, step_size=20, gamma=0.5)
+    print(model)
+    epochs = 100
+    model, train_loss, val_loss = train_model(model, criterion, optimizer_conv,
+                                              exp_lr_scheduler, dataloaders, device, num_epochs=epochs)
 
-        print(model)
-        model = train_model(model, criterion, optimizer_conv,
-                                 exp_lr_scheduler, dataloaders, device, num_epochs=25)
+    visualize_model(model, dataloaders, device)
+    plt.ioff()
+    plt.show()
 
-        visualize_model(model, dataloaders, device)
-        plt.ioff()
-        plt.show()
+    plt.plot(np.arange(epochs), train_loss, c='red', label='Training loss')
+    plt.plot(np.arange(epochs), val_loss, c='blue', label='Validation loss')
+    plt.legend()
+    plt.title('Loss Curve')
+    plt.xlabel('Epochs')
+    plt.ylabel('Loss')
+    plt.savefig('./Loss Curve')
+
+    torch.save(model.state_dict(), './trainedmodel.pth')
+
 
 if __name__ == '__main__':
     main()
