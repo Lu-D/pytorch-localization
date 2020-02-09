@@ -6,13 +6,13 @@ from skimage import io, transform
 from torch.utils.data import Dataset
 from torchvision import transforms
 from model import Net
-from utils import TestFile, Rescale, ToTensor, show_dot
+from utils import TestFile, Rescale, ToTensor, Normalize, show_dot
 import argparse
 
 MODEL_PATH = './model.pth'
 
 
-def test_model(path, viz=False):
+def test_model(path):
     image = io.imread(path)
     image = transform.resize(image, (256, 256))
 
@@ -28,7 +28,8 @@ def test_model(path, viz=False):
         set = TestFile(path,
                        transform=transforms.Compose([
                            Rescale(256),
-                           ToTensor()
+                           ToTensor(),
+                           Normalize()
                        ])
                        )
         loader = torch.utils.data.DataLoader(set)
@@ -37,8 +38,6 @@ def test_model(path, viz=False):
             coordinates = model(image).data
             coordinates = coordinates.cpu().numpy()
             print('{:.4f} {:.4f}'.format(coordinates[0][0], coordinates[0][1]))
-            if viz:
-                show_dot(input['original'], coordinates)
 
 
 def main():
@@ -46,10 +45,8 @@ def main():
     parser = argparse.ArgumentParser(description='Test Prediction')
     parser.add_argument('path', metavar='P', type=str,
                         help='path of file for prediction')
-    parser.add_argument('viz', metavar='V', type=bool, default=False,
-                        help='visualize prediction')
     args = parser.parse_args()
-    test_model(args.path, args.viz)
+    test_model(args.path)
 
 
 if __name__ == '__main__':

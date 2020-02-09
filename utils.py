@@ -44,7 +44,7 @@ class Normalize(object):
         self.inplace = inplace
 
     def __call__(self, sample):
-        image = sample['image']
+        image = sample
         return {'image': TF.normalize(image, self.mean, self.std, self.inplace),
                 'original': image}
 
